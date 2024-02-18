@@ -64,7 +64,7 @@ entanglement_blocks = ['cz','cx'][1] # entanglement gate in the ansatz ## I noti
 # SCF convergence criteria:
 E_conv         = 1e-5
 D_conv         = 1e-4
-SCF_maxiter    = 50
+SCF_maxiter    = 1000
 slope_SCF      = 5 # set to None is not used.
 
 # Classical optimizer criteria:
