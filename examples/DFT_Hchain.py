@@ -34,6 +34,11 @@ for R in interdist_list:
 
     psi4.core.clean()
     # Define the geometry
+    if not os.path.exists(working_directory + "results/"):
+      os.makedirs(working_directory + "results/")
+    if not os.path.exists(working_directory + "results/H{}_R{}_{}_{}_Psi4.dat".format(n_hydrogens,R,basis,functional)):
+      with open(working_directory + "results/H{}_R{}_{}_{}_Psi4.dat".format(n_hydrogens,R,basis,functional), 'w') as f:
+        pass
     psi4.core.set_output_file(working_directory + "results/H{}_R{}_{}_{}_Psi4.dat".format(n_hydrogens,R,basis,functional),True)
     string_geo  = "0 1\n"
     for d in range(n_hydrogens//2):

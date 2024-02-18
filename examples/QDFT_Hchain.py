@@ -132,6 +132,10 @@ for R in interdist_list:
 
     psi4.core.clean()
     # Define the geometry
+    if not os.path.exists(working_directory + "examples/results/"):
+      os.makedirs(working_directory + "examples/results/")
+    if not os.path.exists(working_directory + "examples/results/H{}_R{}_{}_{}_Psi4.dat".format(n_orbs,R,basis,functional)):
+      with open(working_directory + "examples/results/H{}_R{}_{}_{}_Psi4.dat".format(n_orbs,R,basis,functional),'w') as f: f.write('')
     psi4.core.set_output_file(working_directory + "examples/results/H{}_R{}_{}_{}_Psi4.dat".format(n_orbs,R,basis,functional),True)
     psi4.geometry(QDFT.Hchain_geometry("linear",n_orbs,R))
 
