@@ -52,7 +52,7 @@ for R in interdist_list:
 
     psi4.set_options({'basis': basis,'save_jk':True, 'debug':1, 'print':5, 'scf_type':'pk'})
     #psi4.set_options({'basis': basis,'scf_type':'pk'})
-    dft_e, dft_wfn = psi4.energy(functional, return_wfn=True)
+    dft_e, dft_wfn = psi4.energy(functional, return_wfn=True, maxiter=SCF_maxiter)
 
     # Hcore matrix:
     Hcore = dft_wfn.H().clone()

@@ -175,7 +175,7 @@ for R in interdist_list:
     D_AO = SAD.Da()
 
     if run_fci:
-        psi4.set_options({'ci_maxiter': 100})
+        psi4.set_options({'ci_maxiter': 1000})
         fci_e = psi4.energy('fci', return_wfn=False)
 
     # Initialize the potential object
